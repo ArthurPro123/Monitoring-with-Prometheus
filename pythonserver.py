@@ -5,8 +5,14 @@ from prometheus_flask_exporter import PrometheusMetrics
 app = Flask(__name__)
 
 metrics = PrometheusMetrics.for_app_factory()
-metrics.init_app(app, group_by='endpoint')
+metrics.init_app(app)
 
+# Custom metric to track requests by endpoint
+@metrics.do_not_track()  # This decorator prevents the metrics from tracking this request.
+@app.before_request
+def before_request():
+    """Add the endpoint name to the Prometheus metrics."""
+    metrics.counter('flask_http_requests', 'Number of HTTP requests', labels={'path': request.path}).inc()
 
 @app.route('/')
 def home():
