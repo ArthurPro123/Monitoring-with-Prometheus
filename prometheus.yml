@@ -5,7 +5,7 @@ scrape_configs:
   - job_name: 'monitorPythonserver'
     static_configs:
 
-      - targets: ['pythonserver:8080']
+      - targets: ['pythonserver:5000']
         labels:
           group: 'monitoring_python'
 

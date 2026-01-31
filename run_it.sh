@@ -23,9 +23,9 @@ docker ps | grep node-exporter
 docker build -t pythonserver .
 
 # Run the pythonserver Docker container on the 'monitoring_net' network exposing port
-# 8080 so that Prometheus will have access to it:
+# 5000 so that Prometheus will have access to it:
 
-docker run -d --name pythonserver -p 8081:8080 --network monitoring_net pythonserver
+docker run -d --name pythonserver -p 5001:5000 --network monitoring_net pythonserver
 
 
 # Launch the Prometheus monitor 
