@@ -8,6 +8,7 @@ metrics = PrometheusMetrics.for_app_factory()
 metrics.init_app(app)
 
 # Custom metric to track requests by endpoint
+from flask import request
 @metrics.do_not_track()  # This decorator prevents the metrics from tracking this request.
 @app.before_request
 def before_request():
