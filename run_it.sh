@@ -35,9 +35,9 @@ docker run -d --name prometheus -p 9090:9090 --network monitoring_net \
 
 
 # App endpoints:
-# localhost:8081/
-# localhost:8081/contact
-# localhost:8081/about
+# localhost:5001/
+# localhost:5001/contact
+# localhost:5001/about
 
 
 cat <<'EOF'
@@ -46,7 +46,7 @@ cat <<'EOF'
 
 1. Verify Flask Metrics Endpoint
 Run this command to confirm the Flask app is exposing Prometheus metrics:
-curl http://localhost:8081/metrics
+curl http://localhost:5001/metrics
 
 2. Query Metrics in Prometheus
 Open: http://localhost:9090/graph
