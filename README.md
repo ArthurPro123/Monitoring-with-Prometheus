@@ -21,7 +21,7 @@ This project demonstrates how to monitor a Flask application and system metrics 
 ## Setup & Run
 
 1. **Clone the repository**:
-   ```bash
+   ```sh
    git clone https://github.com/ArthurPro123/Monitoring-with-Prometheus
    cd Monitoring-with-Prometheus
 
