@@ -25,7 +25,7 @@ This project demonstrates how to monitor a Flask application and system metrics 
 
 ---
 
-## Prerequisites
+## Prerequisites 
 
 - Docker
 
